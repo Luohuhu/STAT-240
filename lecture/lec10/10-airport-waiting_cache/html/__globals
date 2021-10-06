@@ -1,0 +1,13 @@
+stuff-for-all-airports	%>%	|	$	across	as_tibble	as.character	as.numeric	c	date	ends_with	is.factor	mdy	mutate	names<-	readHTMLTable	return	slice	starts_with	where
+read-data	bind_rows	read_airport	rm
+missing-data	%>%	across	awt	everything	is.na	print	return	sum	summarize
+unnamed-chunk-1	%>%	~	across	awt	everything	print	summarize
+key-variables-airport-passengers-flights	%>%	airport	all_flights	all_total	awt	group_by	sum	summarize	terminal
+key-variables-airport-dates	%>%	airport	awt	count	date	distinct	select
+unnamed-chunk-2	%>%	airport	awt	date	distinct	filter	full_join	is.na	select	seq	tibble	ymd
+unnamed-chunk-3	%>%	==	awt	count	date	filter
+key-variables-all_total	!=	%>%	all_excluded	all_n_0_15	all_n_120_plus	all_n_16_30	all_n_31_45	all_n_46_60	all_n_61_90	all_n_91_120	all_total	check_total	filter	mutate	sum	summarize
+key-variables-all_total-times	%>%	airport	count	hour	table_mismatch
+key-variables-all_total-mismatch-graphic	aes	all_total	check_total	geom_histogram	ggplot	table_mismatch
+add-variables	!=	.	%>%	all_excluded	check_total	check_total2	contains	diff	max	min	mutate	pmap_dbl	select	sum	summarize
+associations	%>%	==	~	aes	airport	awt	facet_wrap	filter	geom_abline	geom_point	ggplot	non_us_avg_wait	non_us_max_wait	us_avg_wait	us_max_wait

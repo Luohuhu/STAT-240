@@ -1,0 +1,135 @@
+---
+author: "REPLACE WITH YOUR NAME"
+title: "Assignment 4"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, fig.height = 3)
+library(tidyverse)
+library(lubridate)
+library(scales)
+source("../../scripts/viridis.R")
+```
+
+#### Due Sunday, October 10, 11:59 pm CT
+
+### Problems
+### 1
+
+The next few questions involve five data sets involving international flights arriving to Chicago's O'Hare airport from January 1, 2016 through December 31, 2020
+with one separate file for each year.
+Each file has been cleaned from the original HTML.
+
+Each data set is in a separate CSV file:
+`ORD-2016.csv`, `ORD-2017.csv`, `ORD-2018.csv`, `ORD-2019.csv`, and `ORD-2020.csv`.
+
+- Read in the five data sets. 
+- Use `bind_rows()` to combine these data sets into a single data set.  
+- Add columns for *year*, *month* (character valued, use month abbreviations, Jan-Dec), *day* (day of the month), and *wday* (day of the week, character valued, use day abbreviations, Sun - Sat).  
+- Reorder the variables so that these new variables all appear directly after the date column.  
+- Remove the terminal variable.  
+- Rename *all_total* to *passengers*, *all_flights* to *flights*, and *all_booths* to *booths*.  
+- Arrange the rows by date and hour.  
+- Remove the individual data sets from each individual year (use `rm()`).  
+- Print the first 20 rows of the data frame and at least 4 columns.  
+
+```{r}
+
+```
+
+- After these changes, how many rows and columns are in the complete data set?
+
+REPLACE THIS TEXT WITH YOUR RESPONSE
+
+
+### 2
+
+> Are there any dates in the range from January 1, 2016 through December 31, 2020 that are missing? If so, which ones?
+
+```{r}
+
+```
+
+
+### 3
+
+>  Analysis of monthly international arrivals.
+
+- Display the total number of passengers by month and year with a bar chart where month is the primary variable on the x-axis and there is a separate bar (i.e, not stacked) and filled with a different color for each year.  
+- Add meaningful axis and legend labels and a title to this graph. (Consider using the the function `guides()` to change the legend title.)
+- Change the scale on the y axis so that values are printed as numbers with commas and not using scientific notation. (See the help for the **ggplot2** function `scale_y_continuous()` and the **scales** function `label_comma()`.)  
+-  Answer the question below.
+
+**In the 2020 months, how do the passenger totals compare to the previous year?  Describe any other patterns you notice.**
+
+
+### 4
+
+> Investigate the average number of passengers per day of the week.
+
+- Create a table that contains the average number of passengers arriving for each day of the week (Sun - Sat) for each year (2016--2020). (This table should have three columns: the year, the day of the week, and the number of passengers.)
+- Create a graphic that displays a bar for each day of the week with the height of the bar at the average number of passengers for that day of the week with a separate facet for each year.
+-  Choose fill colors for the bars according to year.
+-  Add descriptive axis labels and a title.  
+-  Try `guides(fill = guide_legend(title="Year"))` to improve the legend appearance.  
+-  Answer the questions below.
+
+Which day of the week has the highest average number of passengers for each year?
+
+Which day of the week has the lowest average number of passengers for each year?
+
+
+
+### 5
+
+>  Analysis of monthly international arrivals.
+
+- Display the total number of passengers by month and year with a bar chart where month is the primary variable on the x-axis and there is a separate bar (i.e, not stacked) and filled with a different color for each year.  
+- Add meaningful axis and legend labels and a title to this graph. (Consider using the `scale_fill_discrete()` function to control the legend title, or `guides()` which can offer even finer control over legend characteristics.) 
+- Change the scale on the y axis so that values are printed as numbers with commas and not using scientific notation. (See the help for the **ggplot2** function `scale_y_continuous()` and the **scales** function `label_comma()`.)  
+-  Answer the question below.
+
+In 2020, how do the passenger totals compare to the previous year?  Describe any other patterns you notice.
+
+
+
+### 6
+
+> Average waiting time comparison between US and Non-US passport holders by season.
+
+- Add a `season` column to the combined data set which is "Spring" for March - May, "Summer" for June - August, "Fall" for September - November, "Winter" for December - February.  **Hint:** There are different ways to define this new variable, but you may want to look into the function `case_when()` to set values of the `season`.  Run `?case_when()` in your console for more information.  
+- Make a scatter plot with the average time for US passengers on the x-axis and the average time for non-US passengers on the y-axis with a point for each row of the data set.
+-  Use different colors for each season.  
+- Plot the data from different years in different facets.  
+- Add a straight line to each plot that passes through the origin with a slope of one (explore `geom_abline()` to do this).  
+-  Add straight regression lines to each plot, separately for each season (`geom_smooth()` with `method = "lm"`).  
+- Answer the questions below.
+
+
+Are there any noteworthy patterns to the data?
+
+What are the primary differences between US and Non-US passengers, and are the patterns different for different seasons?
+
+
+
+
+### 7
+
+Calculate separately for each year, the fraction of cases (a case is a single hour on a single date) for which the average time to get through passport control is greater for non US passport holders than it is for passport holders. Comment on how these values relate to the graphs in the previous problem.
+
+
+
+
+### 8
+
+- Add a column named `booth_rate` to the data set which estimates the average number of passengers per booth per hour. For example, if 1000 passengers arrive between 05:00 and 06:00, the average wait time is 40 minutes, and there are 10 booths open, then an estimate of the total number of passengers per booth per hour could be computed like this: 1000/10 = 100 passengers per booth; (40 minutes per passenger / 1 hour per 60 minutes) = 2/3 hours per passenger; booth rate = 100 / (2/3) = (1000 * 60) / (10 * 40) = 150 passengers per booth per hour. This is an estimate because it assumes available booths change on the hour and it ignores how rates change when passenger wait durations stretch into the next time period.  
+- Add another column called `time_of_day` which takes the value "overnight" from 1am to 5am, "early morning" from 5am to 8am, "morning" from 8am to noon, "afternoon" from noon to 5pm, and "early evening" from 5pm to 8pm, and "late evening" from 8pm to 1am.  
+- Use `reorder()` to put the `time_of_day` variable in this order.  
+-  Filter out cases where there are fewer than 200 total passengers, the average wait time is zero, or the booth rate is over 500.  
+-  Make side-by-side boxplots of the booth rate versus the day of the week using different colors for each day of the week, and different facets for each time of day.  
+-  Answer the question below.
+
+Which time of day has the lowest booth rate?
+
+

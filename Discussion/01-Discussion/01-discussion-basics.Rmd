@@ -1,0 +1,73 @@
+---
+title: "Discussion 1"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning=FALSE)
+```
+
+## Objective
+
+The purpose of this discussion is mainly to check that you have R, Rstudio, and tidyverse installed, that your course files are organized in an effective way, and that you are able to download and load a dataset into R.    
+
+**NOTE:** since this first discussion is just to check that your computer is setup and you're ready to use R, you will each submit it individually instead of submitting for a group. All other discussions will be done in groups with only 1 person submitting.
+
+## Preliminaries
+
+Read the instructions.  
+Create course and discussion folders (and change browser download location settings if necessary).
+Download the files `01-discussion-basics.Rmd` and `lake-mendota-clean-2020.csv` to your `STAT240/Discussion/01-Discussion/` directory.
+
+### Exercise 1
+
+First, install tidyverse if you haven't already, and then import it.
+
+```{r}
+# this is a comment, anything typed here is not executed by R
+# comments are great for explaining code to the viewer
+# if you haven't already installed tidyverse,
+# run this command to install it:  install.packages("tidyverse")
+
+# after installing it, let's import it:
+library(tidyverse)
+```
+
+
+### Exercise 2
+
+Set the `01-Discussion` directory to be be your *working directory*. You can do so either by using the `setwd()` function (see [this](https://statisticsglobe.com/r-get-set-working-directory-getwd-setwd/) for help), or by using the option in the "Session" menu (see [this](https://thispointer.com/r-set-working-directory/) for help).    
+Type `getwd()` in the Console and verify that you see that the working directory is set to be `01-Discussion`.
+If not, learn how to set the working directory from someone in your group or the TA.
+
+When you knit this document,
+the following R chunk will print your working directory to the output document.
+
+```{r getwd, echo=TRUE, results='asis'}
+setwd("/Users/ewiniar/STAT240/Discussion/01-Discussion")
+getwd()
+```
+
+### Exercise 3
+
+The following R chunk will read the data.
+The `names()` command will print the names of the variables in the data frame.
+
+Replace the text XXX below with the correct numbers.
+
+```{r read-data}
+mendota <- read_csv("lake-mendota-clean-2020.csv")
+names(mendota)
+```
+
+#### Response
+
+The Lake Mendota data set has 7 variables and the first variable (next to the `[1]`) is named winter.
+
+
+## Submission
+
+Once you have completed all of the questions, knit the document.
+This should create an HTML document in your `01-Discussion` folder.
+
+Go to the Canvas course web page, find the Assignments section in the left panel, and upload both your edited `01-discussion-basics.Rmd` and `01-discussion-basics.html` files.

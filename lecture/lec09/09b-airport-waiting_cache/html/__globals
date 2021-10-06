@@ -1,0 +1,9 @@
+read-airport-html-1	
+read-airport-html-2	c
+read-airport-html-3	%>%	$	airport_column_names	names	names<-	readHTMLTable	slice	test_airport_file
+read-airport-html-4	class	str	test_airport
+unnamed-chunk-1	%>%	airport	as.character	as.numeric	date	mdy	mutate	terminal	us_avg_wait
+read-airport-html-5	%>%	|	across	as_tibble	as.character	as.numeric	date	ends_with	is.factor	mdy	mutate	starts_with	str	where
+stuff-for-all-airports	%>%	|	$	across	as_tibble	as.character	as.numeric	c	date	ends_with	is.factor	mdy	mutate	names<-	readHTMLTable	return	slice	starts_with	where
+read-data	read_airport
+combine-data	bind_rows	den	jfk	lax	msp	ord	rm	sfo	str

@@ -1,0 +1,12 @@
+unnamed-chunk-1	col_character	col_date	col_double	cols	read_csv
+unnamed-chunk-2	%>%	date	drop_na	group_by	mean	mutate	official	select	summarize	tavg	year
+unnamed-chunk-3	aes	geom_line	geom_smooth	ggplot	mw1	tavg	year
+unnamed-chunk-4	%>%	>	date	drop_na	filter	floor	group_by	mean	month	mutate	n	period	period1	select	str_c	summarize	tavg	tmax	tmin	year
+unnamed-chunk-5	~	aes	element_text	facet_wrap	geom_line	ggplot	ggtitle	mw2	period	tavg	theme	tmax	tmin	xlab	ylab
+unnamed-chunk-6	~	facet_wrap	g
+unnamed-chunk-7	col_character	col_date	col_double	cols	read_csv
+unnamed-chunk-8	%>%	date	day	month	mutate	year
+unnamed-chunk-9	%>%	date	day	drop_na	group_by	month	official	select	slice_max	slice_min	tmax	tmin	ungroup	year
+unnamed-chunk-10	%>%	daily_tmax_high	slice_max	tmax
+unnamed-chunk-11	%>%	==	count	daily_tmax_high	day	filter	month	n	slice_max	ungroup
+unnamed-chunk-12	%>%	<	arrange	daily_tmin_low	day	desc	filter	head	month	tmin

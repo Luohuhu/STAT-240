@@ -1,0 +1,19 @@
+stuff-for-all-airports	%>%	|	$	across	as_tibble	as.character	as.numeric	c	date	ends_with	is.factor	mdy	mutate	names<-	readHTMLTable	return	slice	starts_with	where
+read-data	bind_rows	read_airport	rm
+efficient	aes	airport	all_avg_wait	awt	geom_boxplot	ggplot
+unnamed-chunk-1	%>%	aes	airport	all_avg_wait	awt	geom_boxplot	ggplot	ggtitle	median	mutate	reorder
+people-per-hour-per-booth	%>%	~	aes	airport	all_booths	all_total	awt	booth_total	element_text	facet_wrap	geom_hline	geom_point	ggplot	ggtitle	group_by	hour	mutate	per_booth	round	select	sum	summarize	theme	total	ylab
+people-per-hour-per-booth-2	%>%	~	aes	airport	all_booths	all_total	awt	element_text	facet_wrap	geom_hline	geom_point	ggplot	ggtitle	group_by	hour	mean	median	mutate	rate	rate_median	summarize	theme	ylab
+unnamed-chunk-2	%>%	airport	date	everything	month	mutate	select	terminal	wday
+months	%>%	all_total	arrange	awt	desc	group_by	month	sum	summarize	total
+busy-months	%>%	aes	all_total	arrange	awt	comma	daily	date	day	desc	geom_col	ggplot	ggtitle	group_by	month	mutate	n	scale_y_continuous	sum	summarize	total	xlab	ylab
+busy-weekdays	%>%	aes	all_total	arrange	awt	comma	daily	date	desc	geom_col	ggplot	ggtitle	group_by	mutate	n	round	scale_y_continuous	sum	summarize	total	wday	xlab	ylab
+busy-times	%>%	aes	all_total	arrange	awt	date	desc	element_text	geom_col	ggplot	ggtitle	group_by	hour	hourly	mutate	n	round	sum	summarize	theme	total	xlab	ylab
+add-proportions	%>%	all_n_0_15	all_n_120_plus	all_n_16_30	all_n_61_90	all_n_91_120	all_total	mutate
+less30-airport	%>%	aes	airport	awt	geom_boxplot	ggplot	ggtitle	median	mutate	p_less_30	reorder
+less30-hour	%>%	aes	all_booths	all_n_0_15	all_n_16_30	all_total	awt	booths	element_text	geom_point	ggplot	ggtitle	group_by	hour	n_less_30	p_less_30	sum	summarize	theme	total
+less30-airport-hour	%>%	~	aes	airport	all_booths	all_n_0_15	all_n_16_30	all_total	awt	element_text	facet_wrap	geom_col	ggplot	ggtitle	group_by	hour	mean	mutate	n_less_30	p_less_30	reorder	sum	summarize	theme	total	ungroup
+less30-airport-hour-check	%>%	==	airport	all_total	awt	filter	group_by	hour	sum	summarize
+less30-airport-hour-2	%>%	aes	airport	all_booths	all_n_0_15	all_n_16_30	all_total	awt	element_text	geom_point	ggplot	ggtitle	group_by	hour	n_less_30	p_less_30	sum	summarize	theme	total
+less30-booth-hour	%>%	~	aes	airport	all_booths	all_n_0_15	all_n_16_30	all_total	awt	booths	element_text	facet_wrap	geom_hline	geom_point	ggplot	ggtitle	group_by	hour	mutate	n_less_30	p_less_30	passenger_per_booth	sum	summarize	theme	total	ylab
+less30-booth-hour-2	%>%	~	aes	airport	all_booths	all_n_0_15	all_n_16_30	all_total	awt	booths	element_text	facet_wrap	geom_hline	geom_point	ggplot	ggtitle	group_by	hour	mutate	n_less_30	p_less_30	passenger_per_booth	sum	summarize	theme	total
