@@ -62,6 +62,7 @@ atl_sum = atl %>%
   arrange(desc(average_flights))
   
 atl_sum
+arrange(atl_sum, average_flights)
 ```
 
 
@@ -99,7 +100,10 @@ chi = read_csv2("../../data/chicago-2018.csv") %>%
   summarize(average_passengers = mean(passengers)) %>%
   select(wday, average_passengers, everything())
 ggplot(chi, aes(x = wday, y = average_passengers)) +
-  geom_histogram(stat="identity")
+  geom_histogram(stat="identity") +
+  ggtitle("Total Number of International Arrivals on Chicago by wday") +
+  xlab("Wday") +
+  ylab("Total Number of International Arrivals")
 ```
 
 
@@ -125,7 +129,10 @@ den = read_csv("../../data/denver-2018.csv") %>%
   select(month, flights, everything())
 ggplot(den, aes(x = month, y = flights)) +
   geom_point() +
-  geom_line(group = 1)
+  geom_line(group = 1) +
+  ggtitle("Total Number of International Flights on Denver by Month") +
+  xlab("Month") +
+  ylab("Total Number of Flights")
 ```
 
 ## Lubridate practice
@@ -166,7 +173,7 @@ now_month
 > The day of the week with the full name displayed (i.e., not abbreviated)
 
 ```{r}
-now_week <- wday(now(), label = TRUE)
+now_week <- weekdays(now())
 now_week
 ```
 
